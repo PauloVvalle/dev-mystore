@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Client</title>
+</head>
+<body>
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script>
+    const socket = io('http://localhost:3000', { transports: ['websocket'] });
+
+    socket.on('connect', () => {
+        console.log('Conectado ao servidor websocket')
+    })
+
+    socket.on('newCartNotification', (data) => {
+        console.log('Recebido: Novo carrinho criado! Detalhes:' , data)
+    })
+
+    socket.on('disconnect', () => {
+        console.log('Desconectado do servidor websocket')
+    })
+
+  </script>
+</body>
