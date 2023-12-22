@@ -34,3 +34,5 @@ module.exports = {
 //npx sequelize-cli seed:generate --name demo-cart-users
 //npx sequelize-cli seed:generate --name demo-cart-carts
 //npx sequelize-cli db:seed:all
+
+
